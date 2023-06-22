@@ -34,7 +34,7 @@ def handle_client(client_socket, website_ip):
     
     # Shënimi i kodit për dërgimin e miliona kërkesave në IP adresën 91.239.145.83
     if website_ip == "91.239.145.83":
-        for _ in range(10000000):
+        for _ in range(10):
             if check_website(website_ip):
                 print("Dërguar kërkesë tek uebsajti: {}".format(website_ip))
     
@@ -50,7 +50,7 @@ def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((host, port))
     server_socket.listen(5)
-    print("Serveri filloi dëgjimin në {}:{}".format(host, port))
+    print("Serveri filloi dëgjimin në 91.239.145.83".format(host, port))
 
     while True:
         client_socket, addr = server_socket.accept()
